@@ -1,0 +1,180 @@
+<div class="navHeader">
+    <div class="subNavHeaders">
+        <span class="liHeader">Select Date Range for PFS Data</span>
+        <span class="liStationHeader">Select Station Id</span>
+        <span class="liTestHeader">Select Test Type</span>
+        <span class="liVehHeader">Select Vehicle Family</span>
+    </div>
+    <ul class="navLists">
+        <li>
+            <div class="listItemDiv" ng-class="{'active': fromDate && toDate}">
+                <label for="fromDate" class="fontweight-size">From</label>
+                <input id="fromDate" ng-model="fromDate" type="date" name="fromDate" ng-change="fromDateChange()" />
+                <label for="toDate" class="fontweight-size">To</label>
+                <input id="toDate" ng-model="toDate" type="date" name="toDate" ng-change="toDateChange()"/>
+            </div>
+        </li>
+        <li ng-class="{'disableItem': !fromDate || !toDate}">
+            <div class="listItemDiv" ng-class="{'active': stationId}">
+                <select ng-model="stationId" ng-options="item for item in navOptionsData.stationId">
+                    <option value="">Select</option>
+                </select>
+            </div>
+        </li>
+        <li ng-class="{'disableItem': !stationId}">
+            <div class="listItemDiv"  ng-class="{'active': testType}">
+                <select ng-model="testType" ng-options="item for item in navOptionsData.testType">
+                    <option value="">Select</option>
+                </select>
+            </div></li>
+        <li ng-class="{'disableItem': !testType}">
+            <div class="listItemDiv"  ng-class="{'active': vehicleFamily}">
+                <select ng-model="vehicleFamily" ng-options="item for item in navOptionsData.vehicleFamily">
+                    <option value="">Select</option>
+                </select>
+            </div></li>
+        <li>
+        <li ng-class="{'disableItem': !vehicleFamily}">
+            <div class="listItemDiv" ng-class="{'active': AmpEbomData}">
+                <button class="goBtn" ng-click="goButtonClick()"><span>GO</span></button></div></li>
+    </ul>
+
+    <div class="ampsEbomDiv" ng-show="AmpEbomData.AMP_PART && !showMatchedData">
+        <div class="ampsData">
+            <div class="ampsNumDiv">
+                <div class="amps-no"><span class="amps-number">1</span></div>
+                <div class="amps-text">
+                    <p class="amps-header">Select the appropriate part from AMPS for which you want to match to the corresponding part in Ebom.</p>
+                </div>
+            </div>
+            <div>
+                <span class="amps-parts">Amps Parts</span>
+                <span ng-init="showPoppup = false"><a href="javascript:void(0);" class="pfs-link" id="pfs-link" ng-mouseleave="showPoppup = false"
+                                                      ng-mouseover="showPoppup = true">View PFS Details</a href=""></span>
+            </div>
+            <px-tooltip for ="pfs-link" tooltip-message="L/F LEVEL SENSOR ASSMBLY ANGLE #2,
+            L/F LEVEL SENSOR ASSMBLY TORQUE #2,
+            L/F LEVEL SENSOR ASSMBLY ANGLE #1,
+            L/F LEVEL SENSOR ASSMBLY TORQUE #1" orientation="auto" style=" background:#ffecb3;
+color:#000;"></px-tooltip>
+            <!--<div class="popupDiv" >-->
+                <!--<h3>PFS DescriptionDetails</h3>-->
+                <!--<p ng-repeat="pfs in pfsDetails">{{pfs}}</p>-->
+            <!--</div>-->
+            <div class="ampsRadioDiv">
+                <ul>
+                    <li ng-repeat="amps in AmpEbomData.AMP_PART">
+                        <div class="patch"><input type="radio" ng-model="ampsRadio[amps.id]" value="{{amps.id}}" name="amps" ng-click="ampsChange(ampsRadio[amps.id])" >
+                            <label class="amps-id">{{amps.id}}</label></div> <div class="ampsDesc"><span class="amps-desc">{{amps.AMP_PART_DESC}}</span></div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="ebomData">
+            <div class="ampsNumDiv">
+                <div class="amps-no"><span class="amps-number">2</span></div>
+                <div class="amps-text"><p class="ebom-header">Select the appropriate EBOM usage description from below that matches the station and test.</p></div>
+            </div>
+            <div ng-style="{'margin-bottom': ebomMarginBottomValue}">
+                <span class="amps-parts">EBOM Parts</span>
+            </div>
+            <div class="ebomRadioDiv">
+                <div class="hidden-div" ng-hide="selectedAmps.Serial_No.length">
+                    <p>Please select a part from the left container and click next</p>
+                </div>
+                <ul ng-show="selectedAmps.Serial_No.length > 0">
+                    <li ng-repeat="ebom in selectedAmps.Serial_No" ng-class="{'backgroundRed' : ebom.APMS_EBOM_Score < ebom.AMPS_PFS_Score }">
+                        <input type="radio" ng-model="ebomRadio[ebom.sno]" value="{{ebom.sno}}" name="ebom" ng-change="ebomChange(ebomRadio[ebom.sno])" >
+                        <label>{{ebom.EBOM_PART_USAGE_DESC}}</label>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="next-btn">
+            <button ng-show="selectedAmps" ng-click="back()">BACK</button>
+            <button ng-click="next()">NEXT</button>
+        </div>
+    </div>
+
+    <div class="ampsEbomDiv" ng-show="showMatchedData">
+        <div class="match-message"><h2>You Matched</h2>
+        <p>You matched the following data from AMPS to the corresponding data from EBOM.
+            If<br> this is correct click "OK". If this is not correct click "Cancel".</p></div>
+        <div class="data-match">
+        <div class="ampsData">
+            <div>
+                <span class="amps-parts">AMPS Part# &nbsp; {{selectedAmps.EBOM_PART}}</span>
+            </div>
+            <div class="ampsRadioDiv ampsPadding">
+                <p>{{selectedAmps.AMP_PART_DESC}}</p>
+                <div class="parts-div">
+  <span class="parts-text">
+    Part Specifications
+  </span>
+                </div>
+                <table class="min-max">
+                    <tr>
+                    <td></td>
+                    <td>Min</td>
+                    <td>Max</td>
+                    <td>Target</td>
+                    </tr>
+                    <tr>
+                        <td class="no-border">torque<sup>(Nm)</sup></td>
+                    <td class="border-bottom border-right">{{selectedAmps.AMP_Dynamic_Min}}</td>
+                    <td class="border-bottom border-right">{{selectedAmps.AMP_Dynamic_Max}}</td>
+                    <td class="border-bottom">{{selectedAmps.AMP_Dynamic_Target}}</td>
+                    </tr>
+                    <tr>
+                        <td>angle<sup>(rad)</sup></td>
+                        <td class="border-right">0</td>
+                        <td class="border-right">0</td>
+                        <td>0</td>
+                    </tr>
+                </table>
+            </div>
+
+        </div>
+            <span class="adjust-to">TO</span>
+        <div class="ampsData adjust-ebom">
+            <div>
+                <span class="amps-parts">EBOM Part# &n{{selectedAmps.EBOM_PART}}</span>
+            </div>
+            <div class="ampsRadioDiv ampsPadding">
+                <p>{{selectedEbom.EBOM_PART_USAGE_DESC}}</p>
+                <div class="parts-div ebomparts-div">
+                  <span class="parts-text">
+                   Part Specifications
+                  </span>
+                </div>
+                <table class="min-max">
+                    <tr>
+                        <td></td>
+                        <td>Min</td>
+                        <td>Max</td>
+                        <td>Target</td>
+                    </tr>
+                    <tr>
+                        <td class="no-border">torque<sup>(Nm)</sup></td>
+                        <td  class="border-bottom border-right">{{selectedEbom.EBOM_TORQUE_MIN}}</td>
+                        <td  class="border-bottom border-right">{{selectedEbom.EBOM_TORQUE_MAX}}</td>
+                        <td class="border-bottom">{{selectedEbom.EBOM_TORQUE_TARGET}}</td>
+                    </tr>
+                    <tr>
+                        <td>angle<sup>(rad)</sup></td>
+                        <td  class="border-right">0</td>
+                        <td  class="border-right">0</td>
+                        <td>0</td>
+                    </tr>
+                </table>
+                </div>
+            </div>
+        </div></div>
+        <div class="next-btn" ng-show="showMatchedData">
+            <button ng-click="cancel()">CANCEL</button>
+            <button ng-click="ok()">OK</button>
+        </div>
+    </div>
+
+
+</div>

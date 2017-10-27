@@ -1,0 +1,45 @@
+.match-message{
+    text-align:center;
+}
+.data-match{
+    margin-top:69px;
+}
+.ampsPadding{
+    width: 374px;
+    padding: 2px 40px 0px 21px;
+    margin-left:20px;
+}
+.adjust-to{
+    position: relative;
+    top: 140px;
+    right: 650px;
+    font-size: 24px;
+}
+.parts-div {
+    width: 100%;
+    height: 9px;
+    border-bottom: 1px solid black;
+    text-align: center;
+}
+.parts-text{
+    font-size: 15px;
+    background-color: #F3F5F6;
+    padding: 0 10px;
+}
+
+table th, table td {
+    padding: 0.8em;
+}
+.min-max{
+    position: relative;
+    top: 20px;
+    left: 22px;
+    text-align:center;
+    border-collapse: collapse;
+}
+.border-bottom{
+    border-bottom:1px solid #9e9e9e;
+}
+.border-right {
+    border-right: 1px solid #9e9e9e;
+}

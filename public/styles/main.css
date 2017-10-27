@@ -1,0 +1,92 @@
+.alignLeft {
+    float:left;
+}
+.alignRight {
+    float: right;
+}
+.fullWidth {
+    width: 100%;
+}
+.logo {
+    width: 11%;
+
+}
+.header {
+    background: #2B404C;
+}
+.logoRightLine {
+    border-right: 2px solid white;
+    height: 33px;
+    float: right;
+    margin-top: 14px;
+}
+.torqueMeasurement{
+    width: 35%;
+    margin-left: 20px;
+    color: white;
+}
+.userDiv {
+    width: 26%;
+}
+.userName{
+    float: left;
+    margin-top: 24px;
+}
+.userIcon{
+    float: left;
+    margin-top: 10px;
+}
+.userDownArrow{
+    float: left;
+    margin-top: 25px;
+}
+.jefronDiv{
+   /*
+    position: relative;*/
+    color: white;
+    width: 25%;
+   /* border-bottom: 100px solid red;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;*/
+   /* height: 0;*/
+}
+/*.jefronDiv:before{
+    width: 56px;
+    height: 47px;
+    border-bottom: 1px solid red;
+    -webkit-transform:
+            translateY(-20px)
+            translateX(5px)
+            rotate(27deg);
+    position: absolute;
+    content:'';
+}*/
+.leftNav {
+    width: 11%;
+    min-height: 713px;
+    float: left;
+    background: lavender;
+}
+.mainViewDiv {
+    float: left;
+    width: 89%;
+    background: white;
+    color: black;
+    min-height: 713px;
+}
+
+.leftNav ul {
+    list-style: none;
+    color: black;
+    padding-left: 0;
+    margin: 0px !important;
+}
+.leftNav ul li {
+    background: #337ab7;;
+    padding: 16px;
+}
+.leftNav ul li .navNameSpan{
+    margin-left: 34px;
+    color: #FFF;
+    font-size: 16px;
+}

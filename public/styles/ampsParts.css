@@ -1,0 +1,108 @@
+
+.ampsEbomDiv {
+    width: 94%;
+    float: left;
+    margin: 20px;
+
+}
+.ampsData {
+    width: 45%;
+    float: left;
+    margin: auto 10px;
+}
+p.amps-header{
+    margin:0px;
+}
+.ebomData {
+    width: 45%;
+    float: left;
+    margin: auto 10px;
+}
+.ampsEbomDiv ul {
+    list-style: none;
+}
+.ampsRadioDiv, .ebomRadioDiv {
+    min-height: 300px;
+    background: #eeeeee;
+}
+.amps-no{
+    float:left;
+    width:10%;
+}
+.amps-text{
+    float: left;
+    width:89%;
+}
+.amps-text p{
+    padding-left: 0px;
+    padding-top: 0px;
+    margin: 0px;
+}
+.ampsNumDiv {
+    width: 100%
+}
+.amps-number{
+    font-size: 26px;
+    background-color: black;
+    color: #FFF;
+    padding: 8px 12px;
+}
+.amps-header, .ebom-header{
+    padding: 7px 0px 0px 48px;
+}
+div.patch{
+    float:left;
+    min-width:80px;
+    padding-right:48px;
+    padding-bottom:37px;
+    width:108px;
+}
+.ampsRadioDiv ul, .ebomRadioDiv ul{
+    margin:0px!important;
+    padding-left:26px;
+}
+.ampsRadioDiv ul li, .ebomRadioDiv ul li{
+    padding-top:25px;
+}
+.pfs-link{
+    float:right;
+    color:#337ab7;
+}
+.hidden-div{
+    text-align: center;
+    position: relative;
+    top: 126px;
+}
+.hidden-div p{
+    color:#bdbdbd;
+}
+.next-btn{
+    clear: both;
+    float: right;
+    margin-right: 97px;
+    margin-top: 8px;
+}
+.next-btn button {
+    background: #337ab7;
+    color: #FFF;
+    padding: 5px 15px;
+}
+.ebomRadioDiv{
+    position: relative;
+    top: 0px;
+}
+.popupDiv{
+    position:absolute;
+
+}
+px-tooltip{
+    background:#ffecb3;
+    color:#000;
+
+}
+.amps-parts{
+    padding:2px 40px 0px 21px;
+}
+.ebomparts-div{
+    padding-top:40px;
+}

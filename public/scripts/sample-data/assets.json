@@ -1,0 +1,118 @@
+[
+  {
+    "EBOM_Vehicle_Family": "WK",
+    "PFS_Description":"L/F LEVEL SENSOR ASSMBLY",
+    "Test_Type": "AK",
+    "Station_ID": "2147L",
+    "AMP_PART": [
+      {
+        "id": "6101736",
+        "AMP_PART_DESC": "NUT&WA/HEX CONE.WASH FRT SENSOR BRACKET TO REINFORCEMENT FRT SENSOR BRACKET TO REINFORCEMENT",
+        "AMP_Dynamic_Target": "5",
+        "AMP_Dynamic_Min": "4",
+        "AMP_Dynamic_Max": "6",
+        "AMPS_PFS_Score":"0.178885438",
+        "EBOM_PART": "06101736",
+        "EBOM_Noun_Name": "NUT&WA/HEX",
+        "EBOM_Noun_Desc": "CONE.WASH",
+        "Serial_No": [
+          {
+            "sno": "5",
+            "EBOM_PART_USAGE_DESC": "DOUBLE DASH TO BODY",
+            "EBOM_TORQUE_MIN": "5.00",
+            "EBOM_TORQUE_TARGET": "6.00",
+            "EBOM_TORQUE_MAX": "7.00",
+            "AMPS_EBOM_Score":"0.2",
+            // Check this value out of all ebom parts
+            "EBOM_PFS_Score":"0"
+          },
+          {
+            "sno": "6",
+            "EBOM_PART_USAGE_DESC": "LIGHTBAR TO BODY",
+            "EBOM_TORQUE_MIN": "6.00",
+            "EBOM_TORQUE_TARGET": "7.00",
+            "EBOM_TORQUE_MAX": "8.00",
+            "AMPS_EBOM_Score":"0.230940108",
+            "EBOM_PFS_Score":"0"
+          },
+          {
+            "sno": "7",
+            "EBOM_PART_USAGE_DESC": "LIFTGATE HANDLE ASSY TO LIFTGATE",
+            "EBOM_TORQUE_MIN": "6.10",
+            "EBOM_TORQUE_TARGET": "6.50",
+            "EBOM_TORQUE_MAX": "6.80",
+            "AMPS_EBOM_Score":"0.151185789",
+            "EBOM_PFS_Score":"0"
+          },
+          {
+            "sno": "8",
+            "EBOM_PART_USAGE_DESC": "FRT SENSOR BRACKET TO REINFORCEMENT",
+            "EBOM_TORQUE_MIN": "4.00",
+            "EBOM_TORQUE_TARGET": "5.00",
+            "EBOM_TORQUE_MAX": "6.00",
+            "AMPS_EBOM_Score":"0.894427191",
+            "EBOM_PFS_Score":"0.2"
+          },
+          {
+            "sno": "9",
+            "EBOM_PART_USAGE_DESC": "DIFFERENTIAL PRESSURE SENSOR TO BKT",
+            "EBOM_TORQUE_MIN": "5.70",
+            "EBOM_TORQUE_TARGET": "6.00",
+            "EBOM_TORQUE_MAX": "6.30",
+            "AMPS_EBOM_Score":"0.357770876",
+            "EBOM_PFS_Score":"0.2"
+          },
+          {
+            "sno": "10",
+            "EBOM_PART_USAGE_DESC": "FRT SENSOR BRACKET TO BIW",
+            "EBOM_TORQUE_MIN": "4.00",
+            "EBOM_TORQUE_TARGET": "5.00",
+            "EBOM_TORQUE_MAX": "6.00",
+            "AMPS_EBOM_Score":"0.536656315",
+            "EBOM_PFS_Score":"0.2"
+          }
+        ]
+      },
+      {
+        "id": "06509481AA",
+        "AMP_PART_DESC": "SC.TAP&WA/HEX.HD BLUNT.PT.FLAT.WASH.HEX.DRIVE RR FASCIA BRKT TO BSA RR FASCIA BRKT TO BSA",
+        "AMP_Dynamic_Target": "2.1",
+        "AMP_Dynamic_Min": "1.7",
+        "AMP_Dynamic_Max": "2.5",
+        "AMPS_PFS_Score":"0.0",
+        "EBOM_PART": "06509481AA",
+        "EBOM_Noun_Name": "SC.TAP&WA/HEX.HD",
+        "EBOM_Noun_Desc": "BLUNT.PT.FLAT.WASH.HEX.DRIVE",
+        "Serial_No": [
+          {
+            "sno": "14",
+            "EBOM_PART_USAGE_DESC": "FRT FASCIA BRACKET TO FASCIA",
+            "EBOM_TORQUE_MIN": "0.00",
+            "EBOM_TORQUE_TARGET": "0.00",
+            "EBOM_TORQUE_MAX": "0.00",
+            "AMPS_EBOM_Score":"0.330289130",
+            "EBOM_PFS_Score":"0"
+          },
+          {
+            "sno": "15",
+            "EBOM_PART_USAGE_DESC": "RR FASCIA BRACKET TO BSA",
+            "EBOM_TORQUE_MIN": "1.70",
+            "EBOM_TORQUE_TARGET": "2.10",
+            "EBOM_TORQUE_MAX": "2.50",
+            "APMS_EBOM_Score":"0.778498944",
+            "EBOM_PFS_Score":"0"
+          },
+          {
+            "sno": "16",
+            "EBOM_PART_USAGE_DESC": "RR FASCIA BRKT TO RR FASCIA",
+            "EBOM_TORQUE_MIN": "1.70",
+            "EBOM_TORQUE_TARGET": "2.10",
+            "EBOM_TORQUE_MAX": "2.50",
+            "APMS_EBOM_Score":"0.660578259",
+            "EBOM_PFS_Score":"0"
+          }
+        ]
+      }
+    ]
+  }
+]

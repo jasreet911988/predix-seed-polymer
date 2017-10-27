@@ -1,6 +1,6 @@
 ---
 applications:
-  - name: predix-webapp-starter
+  - name: fca-torque
     memory: 128M
     timeout: 180
     buildpack: nodejs_buildpack
